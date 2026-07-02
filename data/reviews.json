@@ -1,5 +1,12 @@
 [
   {
+    "id": "1783032753052",
+    "name": "Test",
+    "rating": 5,
+    "text": "This is a test review for API validation only.",
+    "date": "2026-07-02"
+  },
+  {
     "id": "seed-1",
     "name": "Claire M.",
     "rating": 5,
