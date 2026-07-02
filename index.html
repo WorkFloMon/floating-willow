@@ -623,7 +623,77 @@
     }
 
     .order__empty[hidden],
-    .checkout[hidden] { display: none !important; }
+    .checkout[hidden],
+    .checkout__line[hidden],
+    .promo-applied[hidden] { display: none !important; }
+
+    /* ── Promo code ── */
+    .promo {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .promo__row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .promo__input {
+      flex: 1;
+      border: 1.5px solid var(--border);
+      padding: 12px 16px;
+      font-size: 15px;
+      color: var(--text);
+      background: white;
+      outline: none;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .promo__input:focus { border-color: var(--sage); }
+
+    .promo__btn {
+      background: var(--green);
+      color: var(--cream);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 12px 22px;
+      white-space: nowrap;
+    }
+
+    .promo__btn:hover { opacity: 0.92; }
+
+    .promo-applied {
+      font-size: 14px;
+      color: var(--plum);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .promo-error {
+      font-size: 13px;
+      color: oklch(45% 0.15 25);
+      line-height: 1.5;
+    }
+
+    .checkout__line--discount .checkout__line-price {
+      color: var(--plum);
+      font-weight: 600;
+    }
+
+    .checkout__line--bonus {
+      font-style: italic;
+      color: var(--text-soft);
+    }
+
+    .checkout__line--bonus .checkout__line-price {
+      color: var(--green);
+      font-weight: 600;
+    }
 
     /* ── Checkout ── */
     .checkout {
@@ -676,8 +746,6 @@
     }
 
     .checkout__line-price { font-weight: 500; }
-
-    .checkout__line[hidden] { display: none; }
 
     .checkout__grand {
       display: flex;
@@ -902,6 +970,200 @@
       line-height: 1.8;
     }
 
+    /* ── Reviews ── */
+    .reviews {
+      background: var(--cream);
+      padding: 100px 64px;
+      border-top: 1px solid var(--border);
+    }
+
+    .reviews__inner {
+      max-width: 880px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    .reviews__header {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .reviews__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(38px, 5vw, 56px);
+      font-weight: 300;
+      color: var(--green);
+      line-height: 1.06;
+      letter-spacing: 0.02em;
+    }
+
+    .reviews__summary {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .reviews__average {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      font-weight: 300;
+      color: var(--plum);
+      line-height: 1;
+    }
+
+    .reviews__count {
+      font-size: 14px;
+      color: var(--text-soft);
+      font-style: italic;
+    }
+
+    .stars {
+      display: inline-flex;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .star {
+      width: 18px;
+      height: 18px;
+      color: var(--sage);
+    }
+
+    .star--filled { color: var(--plum); }
+
+    .stars--large .star { width: 24px; height: 24px; }
+
+    .stars--input .star {
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      transition: color 0.15s, transform 0.15s;
+    }
+
+    .stars--input .star:hover { transform: scale(1.08); }
+
+    .reviews__list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .review-card {
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 32px;
+      background: var(--card-bg);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .review-card__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .review-card__name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--green);
+    }
+
+    .review-card__date {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+    }
+
+    .review-card__text {
+      font-size: 16px;
+      line-height: 1.85;
+      color: var(--text-soft);
+      font-style: italic;
+    }
+
+    .reviews__empty {
+      text-align: center;
+      font-size: 16px;
+      color: var(--text-soft);
+      font-style: italic;
+      padding: 24px 0;
+    }
+
+    .review-form {
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 36px 32px;
+      background: var(--cream-alt);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .review-form__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--green);
+      text-align: center;
+    }
+
+    .review-form__rating {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .review-form__rating-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+    }
+
+    .review-form__submit {
+      background: var(--green);
+      color: var(--cream);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 15px 32px;
+      align-self: center;
+    }
+
+    .review-form__submit:hover { opacity: 0.92; }
+
+    .review-form__submit:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    .review-form__message {
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.6;
+      min-height: 22px;
+    }
+
+    .review-form__message--success { color: var(--green); font-style: italic; }
+    .review-form__message--error { color: oklch(45% 0.15 25); }
+
     /* ── Mobile ── */
     @media (max-width: 768px) {
       .nav { padding: 0 24px; }
@@ -986,6 +1248,11 @@
       .checkout__payment-buttons { grid-template-columns: 1fr; }
 
       .footer { padding: 48px 24px; }
+
+      .reviews { padding: 72px 24px; }
+      .review-card { padding: 24px 20px; }
+      .review-form { padding: 28px 20px; }
+      .promo__row { flex-direction: column; }
     }
   </style>
 </head>
@@ -996,6 +1263,7 @@
     <a href="#" class="nav__logo">Floating Willow</a>
     <div class="nav__links">
       <a href="#story" class="nav__link">Our Story</a>
+      <a href="#reviews" class="nav__link">Reviews</a>
       <a href="#order" class="nav__link">Order</a>
     </div>
     <a href="#order" class="nav__cta">Order Now</a>
@@ -1008,6 +1276,7 @@
 
   <div class="nav__mobile-menu" id="mobileMenu">
     <a href="#story" class="nav__link">Our Story</a>
+    <a href="#reviews" class="nav__link">Reviews</a>
     <a href="#order" class="nav__link">Order</a>
     <a href="#order" class="nav__cta">Order Now</a>
   </div>
@@ -1106,6 +1375,48 @@
     </div>
   </section>
 
+  <!-- Reviews -->
+  <section id="reviews" class="reviews">
+    <div class="reviews__inner">
+      <div class="reviews__header">
+        <p class="eyebrow">From our customers</p>
+        <h2 class="reviews__title">Reviews</h2>
+        <div class="reviews__summary">
+          <div class="stars stars--large" id="reviewsSummaryStars" aria-hidden="true"></div>
+          <p class="reviews__average" id="reviewsAverage">—</p>
+          <p class="reviews__count" id="reviewsCount">Loading reviews…</p>
+        </div>
+      </div>
+
+      <div class="reviews__list" id="reviewsList"></div>
+      <p class="reviews__empty" id="reviewsEmpty" hidden>No reviews yet — be the first to share your thoughts.</p>
+
+      <form class="review-form" id="reviewForm">
+        <h3 class="review-form__title">Leave a Review</h3>
+        <div class="field">
+          <label class="field__label" for="reviewName">Your Name</label>
+          <input class="field__input" type="text" id="reviewName" placeholder="First name or initials" maxlength="80" required>
+        </div>
+        <div class="review-form__rating">
+          <span class="review-form__rating-label">Your Rating</span>
+          <div class="stars stars--input" id="reviewStarsInput" role="radiogroup" aria-label="Rating">
+            <button type="button" class="star" data-value="1" aria-label="1 star">&#9733;</button>
+            <button type="button" class="star" data-value="2" aria-label="2 stars">&#9733;</button>
+            <button type="button" class="star" data-value="3" aria-label="3 stars">&#9733;</button>
+            <button type="button" class="star" data-value="4" aria-label="4 stars">&#9733;</button>
+            <button type="button" class="star" data-value="5" aria-label="5 stars">&#9733;</button>
+          </div>
+        </div>
+        <div class="field">
+          <label class="field__label" for="reviewText">Your Review</label>
+          <textarea class="field__input field__textarea" id="reviewText" placeholder="Tell us what you thought of the jam…" rows="4" maxlength="500" required></textarea>
+        </div>
+        <button type="submit" class="review-form__submit" id="reviewSubmit">Submit Review</button>
+        <p class="review-form__message" id="reviewMessage"></p>
+      </form>
+    </div>
+  </section>
+
   <!-- Order -->
   <section id="order" class="order">
     <div class="order__inner">
@@ -1168,6 +1479,14 @@
               <span id="line8Label"></span>
               <span class="checkout__line-price" id="line8Price"></span>
             </div>
+            <div class="checkout__line checkout__line--bonus" id="linePromoBonus" hidden>
+              <span>1 &times; 4 oz Jar (Promo &mdash; FREE)</span>
+              <span class="checkout__line-price">$0.00</span>
+            </div>
+            <div class="checkout__line checkout__line--discount" id="linePromoDiscount" hidden>
+              <span id="linePromoLabel">Promo: Springchicken &mdash; 1 free 4 oz jar</span>
+              <span class="checkout__line-price" id="linePromoPrice">&minus;$9.00</span>
+            </div>
             <div class="checkout__grand">
               <span class="checkout__grand-label">Total</span>
               <span class="checkout__grand-total" id="grandTotal">$0.00</span>
@@ -1191,6 +1510,16 @@
               </div>
             </div>
             <p class="checkout__shipping-note">Free local pickup in Sausalito. Flat $5 shipping within California.</p>
+          </div>
+
+          <div class="promo">
+            <p class="checkout__section-title">Promo Code</p>
+            <div class="promo__row">
+              <input class="promo__input" type="text" id="promoInput" placeholder="Enter code" autocomplete="off">
+              <button type="button" class="promo__btn" id="promoApply">Apply</button>
+            </div>
+            <p class="promo-applied" id="promoAppliedMsg" hidden>Springchicken applied &mdash; 1 free 4 oz jar included.</p>
+            <p class="promo-error" id="promoError" hidden></p>
           </div>
 
           <div class="checkout__memo">
@@ -1236,6 +1565,8 @@
 
       var PRICE_4 = 9;
       var PRICE_8 = 15;
+      var PROMO_CODE = 'springchicken';
+      var PROMO_FREE_JAR_VALUE = 9;
       var PAYPAL_EMAIL = 'bearholdings@gmail.com';
       var VENMO_PHONE = '6502698410';
 
@@ -1244,7 +1575,8 @@
         qty8: 0,
         name: '',
         email: '',
-        address: ''
+        address: '',
+        promoApplied: false
       };
 
       var els = {
@@ -1264,6 +1596,13 @@
         line8Label: document.getElementById('line8Label'),
         line4Price: document.getElementById('line4Price'),
         line8Price: document.getElementById('line8Price'),
+        linePromoBonus: document.getElementById('linePromoBonus'),
+        linePromoDiscount: document.getElementById('linePromoDiscount'),
+        linePromoPrice: document.getElementById('linePromoPrice'),
+        promoInput: document.getElementById('promoInput'),
+        promoApply: document.getElementById('promoApply'),
+        promoAppliedMsg: document.getElementById('promoAppliedMsg'),
+        promoError: document.getElementById('promoError'),
         name: document.getElementById('name'),
         email: document.getElementById('email'),
         address: document.getElementById('address'),
@@ -1276,25 +1615,57 @@
         return '$' + amount.toFixed(2);
       }
 
+      function getSubtotal() {
+        return state.qty4 * PRICE_4 + state.qty8 * PRICE_8;
+      }
+
+      function getPromoDiscount() {
+        return state.promoApplied ? PROMO_FREE_JAR_VALUE : 0;
+      }
+
+      function getTotal() {
+        return Math.max(0, getSubtotal() - getPromoDiscount());
+      }
+
       function buildMemo() {
         var parts = [];
         if (state.name) parts.push('From: ' + state.name);
         if (state.qty4 > 0) parts.push(state.qty4 + 'x 4oz ($' + (state.qty4 * PRICE_4).toFixed(2) + ')');
         if (state.qty8 > 0) parts.push(state.qty8 + 'x 8oz ($' + (state.qty8 * PRICE_8).toFixed(2) + ')');
+        if (state.promoApplied) parts.push('Promo: Springchicken (1 free 4oz jar)');
         parts.push('Total: $' + getTotal().toFixed(2));
         if (state.address) parts.push('Ship to: ' + state.address);
         return parts.join(' | ');
       }
 
-      function getTotal() {
-        return state.qty4 * PRICE_4 + state.qty8 * PRICE_8;
+      function applyPromoCode() {
+        var code = els.promoInput.value.trim().toLowerCase();
+        els.promoError.hidden = true;
+
+        if (code === PROMO_CODE) {
+          state.promoApplied = true;
+          els.promoAppliedMsg.hidden = false;
+          els.promoError.hidden = true;
+          render();
+          return;
+        }
+
+        state.promoApplied = false;
+        els.promoAppliedMsg.hidden = true;
+        els.promoError.textContent = code ? 'Invalid promo code.' : 'Enter a promo code.';
+        els.promoError.hidden = false;
+        render();
       }
 
       function render() {
         var sub4 = state.qty4 * PRICE_4;
         var sub8 = state.qty8 * PRICE_8;
-        var total = sub4 + sub8;
+        var subtotal = sub4 + sub8;
+        var discount = getPromoDiscount();
+        var total = getTotal();
         var hasItems = state.qty4 > 0 || state.qty8 > 0;
+        var showPromoBonus = state.promoApplied && state.qty4 === 0 && hasItems;
+        var showPromoDiscount = state.promoApplied && state.qty4 > 0;
 
         els.qty4Display.textContent = state.qty4;
         els.qty8Display.textContent = state.qty8;
@@ -1320,6 +1691,14 @@
           els.line8Label.textContent = state.qty8 + ' \u00d7 8 oz Jar';
           els.line8Price.textContent = formatMoney(sub8);
         }
+
+        els.linePromoBonus.hidden = !showPromoBonus;
+        els.linePromoDiscount.hidden = !showPromoDiscount;
+        if (showPromoDiscount) {
+          els.linePromoPrice.textContent = '\u2212' + formatMoney(discount);
+        }
+
+        els.promoAppliedMsg.hidden = !state.promoApplied;
 
         var memo = buildMemo();
         els.orderMemo.textContent = memo;
@@ -1368,6 +1747,14 @@
         render();
       });
 
+      els.promoApply.addEventListener('click', applyPromoCode);
+      els.promoInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          applyPromoCode();
+        }
+      });
+
       /* Mobile nav */
       var navToggle = document.getElementById('navToggle');
       var mobileMenu = document.getElementById('mobileMenu');
@@ -1389,6 +1776,182 @@
       });
 
       render();
+    })();
+
+    (function () {
+      'use strict';
+
+      var reviewsList = document.getElementById('reviewsList');
+      var reviewsEmpty = document.getElementById('reviewsEmpty');
+      var reviewsAverage = document.getElementById('reviewsAverage');
+      var reviewsCount = document.getElementById('reviewsCount');
+      var reviewsSummaryStars = document.getElementById('reviewsSummaryStars');
+      var reviewForm = document.getElementById('reviewForm');
+      var reviewName = document.getElementById('reviewName');
+      var reviewText = document.getElementById('reviewText');
+      var reviewSubmit = document.getElementById('reviewSubmit');
+      var reviewMessage = document.getElementById('reviewMessage');
+      var reviewStarsInput = document.getElementById('reviewStarsInput');
+      var selectedRating = 0;
+
+      function renderStars(container, rating, interactive) {
+        container.innerHTML = '';
+        for (var i = 1; i <= 5; i++) {
+          if (interactive) {
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'star' + (i <= rating ? ' star--filled' : '');
+            btn.setAttribute('data-value', String(i));
+            btn.setAttribute('aria-label', i + (i === 1 ? ' star' : ' stars'));
+            btn.innerHTML = '&#9733;';
+            container.appendChild(btn);
+          } else {
+            var span = document.createElement('span');
+            span.className = 'star' + (i <= rating ? ' star--filled' : '');
+            span.innerHTML = '&#9733;';
+            container.appendChild(span);
+          }
+        }
+      }
+
+      function formatReviewDate(dateStr) {
+        if (!dateStr) return '';
+        var parts = dateStr.split('-');
+        if (parts.length !== 3) return dateStr;
+        var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        return months[Number(parts[1]) - 1] + ' ' + Number(parts[2]) + ', ' + parts[0];
+      }
+
+      function renderReviews(reviews) {
+        reviewsList.innerHTML = '';
+
+        if (!reviews.length) {
+          reviewsEmpty.hidden = false;
+          reviewsAverage.textContent = '—';
+          reviewsCount.textContent = 'No reviews yet';
+          reviewsSummaryStars.innerHTML = '';
+          return;
+        }
+
+        reviewsEmpty.hidden = true;
+
+        var totalRating = reviews.reduce(function (sum, review) {
+          return sum + Number(review.rating || 0);
+        }, 0);
+        var average = totalRating / reviews.length;
+
+        reviewsAverage.textContent = average.toFixed(1);
+        reviewsCount.textContent = reviews.length + (reviews.length === 1 ? ' review' : ' reviews');
+        renderStars(reviewsSummaryStars, Math.round(average), false);
+
+        reviews.forEach(function (review) {
+          var card = document.createElement('article');
+          card.className = 'review-card';
+
+          var top = document.createElement('div');
+          top.className = 'review-card__top';
+
+          var name = document.createElement('p');
+          name.className = 'review-card__name';
+          name.textContent = review.name;
+
+          var date = document.createElement('p');
+          date.className = 'review-card__date';
+          date.textContent = formatReviewDate(review.date);
+
+          top.appendChild(name);
+          top.appendChild(date);
+
+          var stars = document.createElement('div');
+          stars.className = 'stars';
+          stars.setAttribute('aria-label', review.rating + ' out of 5 stars');
+          renderStars(stars, Number(review.rating), false);
+
+          var text = document.createElement('p');
+          text.className = 'review-card__text';
+          text.textContent = review.text;
+
+          card.appendChild(top);
+          card.appendChild(stars);
+          card.appendChild(text);
+          reviewsList.appendChild(card);
+        });
+      }
+
+      function loadReviews() {
+        fetch('/api/reviews')
+          .then(function (res) { return res.json(); })
+          .then(renderReviews)
+          .catch(function () {
+            return fetch('/data/reviews.json')
+              .then(function (res) { return res.json(); })
+              .then(renderReviews);
+          })
+          .catch(function () {
+            reviewsCount.textContent = 'Could not load reviews';
+          });
+      }
+
+      function setReviewRating(rating) {
+        selectedRating = rating;
+        renderStars(reviewStarsInput, rating, true);
+        bindStarInput();
+      }
+
+      function bindStarInput() {
+        reviewStarsInput.querySelectorAll('.star').forEach(function (star) {
+          star.addEventListener('click', function () {
+            setReviewRating(Number(star.getAttribute('data-value')));
+          });
+        });
+      }
+
+      reviewForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        reviewMessage.className = 'review-form__message';
+        reviewMessage.textContent = '';
+
+        if (!selectedRating) {
+          reviewMessage.className = 'review-form__message review-form__message--error';
+          reviewMessage.textContent = 'Please select a star rating.';
+          return;
+        }
+
+        reviewSubmit.disabled = true;
+
+        fetch('/api/reviews', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: reviewName.value.trim(),
+            rating: selectedRating,
+            text: reviewText.value.trim()
+          })
+        })
+          .then(function (res) {
+            return res.json().then(function (data) {
+              if (!res.ok) throw new Error(data.error || 'Could not submit review.');
+              return data;
+            });
+          })
+          .then(function () {
+            reviewForm.reset();
+            setReviewRating(0);
+            reviewMessage.className = 'review-form__message review-form__message--success';
+            reviewMessage.textContent = 'Thank you! Your review has been posted.';
+            loadReviews();
+          })
+          .catch(function (err) {
+            reviewMessage.className = 'review-form__message review-form__message--error';
+            reviewMessage.textContent = err.message || 'Could not submit review.';
+          })
+          .finally(function () {
+            reviewSubmit.disabled = false;
+          });
+      });
+
+      setReviewRating(0);
+      loadReviews();
     })();
   </script>
 </body>
