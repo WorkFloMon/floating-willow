@@ -1263,8 +1263,8 @@
     <a href="#" class="nav__logo">Floating Willow</a>
     <div class="nav__links">
       <a href="#story" class="nav__link">Our Story</a>
-      <a href="#reviews" class="nav__link">Reviews</a>
       <a href="#order" class="nav__link">Order</a>
+      <a href="#reviews" class="nav__link">Reviews</a>
     </div>
     <a href="#order" class="nav__cta">Order Now</a>
     <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
@@ -1276,8 +1276,8 @@
 
   <div class="nav__mobile-menu" id="mobileMenu">
     <a href="#story" class="nav__link">Our Story</a>
-    <a href="#reviews" class="nav__link">Reviews</a>
     <a href="#order" class="nav__link">Order</a>
+    <a href="#reviews" class="nav__link">Reviews</a>
     <a href="#order" class="nav__cta">Order Now</a>
   </div>
 
@@ -1372,48 +1372,6 @@
         <h3 class="feature__title">Locally Harvested</h3>
         <p class="feature__text">Berries picked from the hills of Marin County, minutes from our kitchen in Sausalito.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- Reviews -->
-  <section id="reviews" class="reviews">
-    <div class="reviews__inner">
-      <div class="reviews__header">
-        <p class="eyebrow">From our customers</p>
-        <h2 class="reviews__title">Reviews</h2>
-        <div class="reviews__summary">
-          <div class="stars stars--large" id="reviewsSummaryStars" aria-hidden="true"></div>
-          <p class="reviews__average" id="reviewsAverage">—</p>
-          <p class="reviews__count" id="reviewsCount">Loading reviews…</p>
-        </div>
-      </div>
-
-      <div class="reviews__list" id="reviewsList"></div>
-      <p class="reviews__empty" id="reviewsEmpty" hidden>No reviews yet — be the first to share your thoughts.</p>
-
-      <form class="review-form" id="reviewForm">
-        <h3 class="review-form__title">Leave a Review</h3>
-        <div class="field">
-          <label class="field__label" for="reviewName">Your Name</label>
-          <input class="field__input" type="text" id="reviewName" placeholder="First name or initials" maxlength="80" required>
-        </div>
-        <div class="review-form__rating">
-          <span class="review-form__rating-label">Your Rating</span>
-          <div class="stars stars--input" id="reviewStarsInput" role="radiogroup" aria-label="Rating">
-            <button type="button" class="star" data-value="1" aria-label="1 star">&#9733;</button>
-            <button type="button" class="star" data-value="2" aria-label="2 stars">&#9733;</button>
-            <button type="button" class="star" data-value="3" aria-label="3 stars">&#9733;</button>
-            <button type="button" class="star" data-value="4" aria-label="4 stars">&#9733;</button>
-            <button type="button" class="star" data-value="5" aria-label="5 stars">&#9733;</button>
-          </div>
-        </div>
-        <div class="field">
-          <label class="field__label" for="reviewText">Your Review</label>
-          <textarea class="field__input field__textarea" id="reviewText" placeholder="Tell us what you thought of the jam…" rows="4" maxlength="500" required></textarea>
-        </div>
-        <button type="submit" class="review-form__submit" id="reviewSubmit">Submit Review</button>
-        <p class="review-form__message" id="reviewMessage"></p>
-      </form>
     </div>
   </section>
 
@@ -1543,6 +1501,48 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" class="reviews">
+    <div class="reviews__inner">
+      <div class="reviews__header">
+        <p class="eyebrow">From our customers</p>
+        <h2 class="reviews__title">Reviews</h2>
+        <div class="reviews__summary">
+          <div class="stars stars--large" id="reviewsSummaryStars" aria-hidden="true"></div>
+          <p class="reviews__average" id="reviewsAverage">—</p>
+          <p class="reviews__count" id="reviewsCount">Loading reviews…</p>
+        </div>
+      </div>
+
+      <div class="reviews__list" id="reviewsList"></div>
+      <p class="reviews__empty" id="reviewsEmpty" hidden>No reviews yet — be the first to share your thoughts.</p>
+
+      <form class="review-form" id="reviewForm">
+        <h3 class="review-form__title">Leave a Review</h3>
+        <div class="field">
+          <label class="field__label" for="reviewName">Your Name</label>
+          <input class="field__input" type="text" id="reviewName" placeholder="First name or initials" maxlength="80" required>
+        </div>
+        <div class="review-form__rating">
+          <span class="review-form__rating-label">Your Rating</span>
+          <div class="stars stars--input" id="reviewStarsInput" role="radiogroup" aria-label="Rating">
+            <button type="button" class="star" data-value="1" aria-label="1 star">&#9733;</button>
+            <button type="button" class="star" data-value="2" aria-label="2 stars">&#9733;</button>
+            <button type="button" class="star" data-value="3" aria-label="3 stars">&#9733;</button>
+            <button type="button" class="star" data-value="4" aria-label="4 stars">&#9733;</button>
+            <button type="button" class="star" data-value="5" aria-label="5 stars">&#9733;</button>
+          </div>
+        </div>
+        <div class="field">
+          <label class="field__label" for="reviewText">Your Review</label>
+          <textarea class="field__input field__textarea" id="reviewText" placeholder="Tell us what you thought of the jam…" rows="4" maxlength="500" required></textarea>
+        </div>
+        <button type="submit" class="review-form__submit" id="reviewSubmit">Submit Review</button>
+        <p class="review-form__message" id="reviewMessage"></p>
+      </form>
     </div>
   </section>
 
