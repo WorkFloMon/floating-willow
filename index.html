@@ -1236,8 +1236,8 @@
 
       var PRICE_4 = 9;
       var PRICE_8 = 15;
-      var PAYPAL_HANDLE = 'YOUR_PAYPAL_HANDLE';
-      var VENMO_HANDLE = 'YOUR_VENMO_HANDLE';
+      var PAYPAL_EMAIL = 'bearholdings@gmail.com';
+      var VENMO_PHONE = '6502698410';
 
       var state = {
         qty4: 0,
@@ -1324,8 +1324,12 @@
         var memo = buildMemo();
         els.orderMemo.textContent = memo;
 
-        els.paypalBtn.href = 'https://www.paypal.com/paypalme/' + PAYPAL_HANDLE + '/' + total.toFixed(2);
-        els.venmoBtn.href = 'https://venmo.com/?txn=pay&audience=public&recipients=' + VENMO_HANDLE
+        els.paypalBtn.href = 'https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business='
+          + encodeURIComponent(PAYPAL_EMAIL)
+          + '&amount=' + total.toFixed(2)
+          + '&currency_code=USD'
+          + '&item_name=' + encodeURIComponent('Floating Willow Jam Order');
+        els.venmoBtn.href = 'https://venmo.com/?txn=pay&audience=public&recipients=' + VENMO_PHONE
           + '&amount=' + total.toFixed(2)
           + '&note=' + encodeURIComponent(memo);
       }
